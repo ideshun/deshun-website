@@ -42,11 +42,11 @@
     mounted () {
       let url =  window.location.host;
       if (url == "www.52deshun.com"){
-        document.title = "德顺的个人网站 ("+url+")";
+        document.title = "德顺爱秒赞 - 德顺的个人网站 ("+url+")";
       } else if (url == "t.dblog.cc"){
-        document.title = "德顺的个人博客 ("+url+")";
+        document.title = "德顺互联网资料分享 - 德顺的个人博客 ("+url+")";
       } else if (url == "t.ideshun.cn"){
-        document.title = "德顺的个人博客 ("+url+")";
+        document.title = "小顺说 - 德顺的个人博客 ("+url+")";
       }
     }
   }
