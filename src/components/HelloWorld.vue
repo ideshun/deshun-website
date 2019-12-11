@@ -39,14 +39,15 @@
     props: {
       msg: String
     },
-    data(){
-      return {
-        webUrl: 'www.w3h5.com',
-      }
-    },
     mounted () {
-      document.title = window.location.href;
-      this.webUrl = window.location.href;
+      let url =  window.location.host;
+      if (url == "www.52deshun.com"){
+        document.title = "德顺的个人网站 ("+url+")";
+      } else if (url == "t.dblog.cc"){
+        document.title = "德顺的个人博客 ("+url+")";
+      } else if (url == "t.ideshun.cn"){
+        document.title = "德顺的个人博客 ("+url+")";
+      }
     }
   }
 </script>
