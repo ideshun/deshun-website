@@ -1,52 +1,62 @@
 <template>
-    <div class="hello">
-        <h1>{{ msg }}</h1>
-        <p>
-            For a guide and recipes on how to configure / customize this project,<br>
-            check out the
-            <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
+  <div class="hello">
+    <div class="container">
+      <h1>{{title}}</h1>
+      <img class="random" src="https://picsum.photos/200">
+      <ul>
+        <li>不知道主页该放什么了，就随便放一点吧。</li>
+        <li>德顺的个人网站，欢迎访问~</li>
+      </ul>
+      <ul>
+        <h3>我的网站</h3>
+        <li><a href="https://www.w3h5.com">前端资源分享</a></li>
+        <li><a href="http://www.dblog.cc">德顺互联网资料分享</a></li>
+        <li><a href="http://t.ideshun.cn">t.ideshun.cn</a></li>
+      </ul>
+      <ul>
+        <h3>我的社交媒体</h3>
+        <li>微博：<a href="https://weibo.com/2493372337">@无码表情包</a></li>
+        <li>Twitter：<a href="https://twitter.com/AlasLiu">@AlasLiu</a></li>
+        <li>GitHub：<a href="https://github.com/ideshun">@ideshun</a></li>
+        <li>百家号：<a href="https://baijiahao.baidu.com/u?app_id=1582878168111795">德顺哥</a></li>
+        <li>联系QQ：<a href="tencent://Message/?Uin=1209278955">1209278955</a></li>
+        <li>前端交流群：<a href="https://jq.qq.com/?_wv=1027&amp;k=5fIUoFe">133413450</a></li>
+        <li>扫一扫下方二维码关注我的微信&amp;公众号</li>
+        <p class="qrcode">
+          <img src="../assets/wxQRCode.webp" alt="">
+          <img src="../assets/mpQRCode.webp" alt="">
         </p>
-        <h3>Installed CLI Plugins</h3>
-        <ul>
-            <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank"
-                   rel="noopener">babel</a></li>
-            <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank"
-                   rel="noopener">eslint</a></li>
-        </ul>
-        <h3>Essential Links</h3>
-        <ul>
-            <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-            <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-            <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-            <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-            <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-        </ul>
-        <h3>Ecosystem</h3>
-        <ul>
-            <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-            <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-            <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank"
-                   rel="noopener">vue-devtools</a></li>
-            <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-            <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-        </ul>
+      </ul>
+      <p class="footer">
+        Copyright&nbsp;©&nbsp;{{time}}&nbsp;<a href="http://www.dblog.cc" target="_blank">Deshun!</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" rel="nofollow" target="_blank">鲁ICP备15019922号</a>
+      </p>
     </div>
+  </div>
 </template>
 
 <script>
   export default {
     name: 'HelloWorld',
     props: {
-      msg: String
+      msg: String,
     },
-    mounted () {
-      let url =  window.location.host;
-      if (url == "www.52deshun.com"){
-        document.title = "德顺爱秒赞 - 德顺的个人网站 ("+url+")";
-      } else if (url == "t.dblog.cc"){
-        document.title = "德顺互联网资料分享 - 德顺的个人博客 ("+url+")";
-      } else if (url == "t.ideshun.cn"){
-        document.title = "小顺说 - 德顺的个人博客 ("+url+")";
+    data() {
+      return {
+        title: "Deshun's website",
+        time: new Date().getFullYear()
+      }
+    },
+    mounted() {
+      let url = window.location.host;
+      if (url == "www.52deshun.com") {
+        this.title = "德顺爱秒赞"
+        document.title = "德顺爱秒赞 - 德顺的个人网站 (" + url + ")";
+      } else if (url == "t.dblog.cc") {
+        this.title = "德顺互联网资料分享"
+        document.title = "德顺互联网资料分享 - 德顺的个人博客 (" + url + ")";
+      } else if (url == "t.ideshun.cn") {
+        this.title = "小顺说"
+        document.title = "小顺说 - 德顺的个人博客 (" + url + ")";
       }
     }
   }
@@ -54,21 +64,76 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    h3 {
-        margin: 40px 0 0;
-    }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+  }
 
-    ul {
-        list-style-type: none;
-        padding: 0;
-    }
+  h3 {
+    margin: 40px 0 0;
+  }
+  .random{
+    position: relative;
+    border: 1px dashed #888888;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 15px;
+    margin-left: 20px;
+  }
+  .random::after{
+    content: "加载中...";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    color: #000;
+    display: block;
+    line-height: 36px;
+    font-size: 16px;
+  }
+  a {
+    color: #42b983;
+  }
 
-    li {
-        display: inline-block;
-        margin: 0 10px;
-    }
+  ul {
+    margin-left: -1em;
+    line-height: 2;
+    margin-top: 2em;
+  }
 
-    a {
-        color: #42b983;
+  .qrcode {
+    margin: 0;
+  }
+
+  .qrcode img {
+    width: 150px;
+  }
+
+  .footer {
+    width: 60%;
+    line-height: 36px;
+    position: fixed;
+    bottom: 0;
+    margin: 0;
+    background: #FFF;
+    border-top: 1px solid #f2f2f2;
+    color: #999999;
+  }
+
+  .footer a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  @media (max-width: 1280px) {
+    .container {
+      padding: 0 5%;
     }
+  }
+  @media (max-width: 600px) {
+    .footer {
+      width: 90%;
+    }
+  }
 </style>
