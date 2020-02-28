@@ -49,8 +49,8 @@
     mounted() {
       let url = window.location.host;
       if (url == "www.52deshun.com") {
-        this.title = "德顺爱秒赞"
-        document.title = "德顺爱秒赞 - 德顺的个人网站 (" + url + ")";
+        this.title = "德顺网络传媒"
+        document.title = "德顺网络传媒 - 德顺的个人网站 (" + url + ")";
       } else if (url == "t.dblog.cc") {
         this.title = "德顺互联网资料分享"
         document.title = "德顺互联网资料分享 - 德顺的个人博客 (" + url + ")";
