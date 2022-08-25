@@ -11,7 +11,8 @@
         <h3>我的网站</h3>
         <li><a href="https://www.w3h5.com">前端资源分享</a></li>
         <li><a href="http://www.dblog.cc">德顺互联网资料分享</a></li>
-        <li><a href="http://t.ideshun.cn">t.ideshun.cn</a></li>
+        <li><a href="http://www.ideshun.cn">ideshun.cn</a></li>
+        <li><a href="http://www.52deshun.com">52deshun.com</a></li>
       </ul>
       <ul>
         <h3>我的社交媒体</h3>
@@ -28,7 +29,7 @@
         </p>
       </ul>
       <p class="footer">
-        Copyright&nbsp;©&nbsp;{{time}}&nbsp;<a href="http://www.dblog.cc" target="_blank">Deshun!</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" rel="nofollow" target="_blank">鲁ICP备15019922号</a>
+        Copyright&nbsp;©&nbsp;{{time}}&nbsp;<a href="http://www.dblog.cc" target="_blank">Deshun!</a>&nbsp;<a href="https://beian.miit.gov.cn/" rel="nofollow" target="_blank">鲁ICP备15019922号</a>
       </p>
     </div>
   </div>
@@ -48,13 +49,13 @@
     },
     mounted() {
       let url = window.location.host;
-      if (url == "www.52deshun.com") {
+      if (url == "www.52deshun.com" || url == "52deshun.com") {
         this.title = "德顺网络传媒"
-        document.title = "德顺网络传媒 - 德顺的个人网站 (" + url + ")";
+        document.title = "爱秒赞(德顺网络传媒) - 德顺的个人网站 (" + url + ")";
       } else if (url == "t.dblog.cc") {
         this.title = "德顺互联网资料分享"
         document.title = "德顺互联网资料分享 - 德顺的个人博客 (" + url + ")";
-      } else if (url == "t.ideshun.cn") {
+      } else if (url == "ideshun.cn" || url == "www.ideshun.cn") {
         this.title = "小顺说"
         document.title = "小顺说 - 德顺的个人博客 (" + url + ")";
       }
