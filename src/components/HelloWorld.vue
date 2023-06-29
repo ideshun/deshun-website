@@ -60,7 +60,7 @@ const website = [
   {
     name: "德顺网络传媒",
     title: "爱秒赞(德顺网络传媒)",
-    code: 2,
+    code: '',
     typeName: "网站",
     regex: /(http(s)?:\/\/)?([\w-]+.)?52deshun.com/,
   },
