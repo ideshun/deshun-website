@@ -10,14 +10,12 @@
       <ul>
         <h3>我的网站</h3>
         <li><a href="https://www.w3h5.com">前端资源分享</a></li>
-        <li><a href="http://www.dblog.cc">德顺互联网资料分享</a></li>
-        <li><a href="http://www.ideshun.cn">ideshun.cn</a></li>
-        <li><a href="http://www.52deshun.com">52deshun.com</a></li>
+        <li><a href="https://www.idblog.cn">德顺博客</a></li>
+        <li><a href="https://www.52deshun.com">德顺网络</a></li>
       </ul>
       <ul>
         <h3>我的社交媒体</h3>
         <li>微博：<a href="https://weibo.com/2493372337">@无码表情包</a></li>
-        <li>Twitter：<a href="https://twitter.com/AlasLiu">@AlasLiu</a></li>
         <li>GitHub：<a href="https://github.com/ideshun">@ideshun</a></li>
         <li>
           百家号：<a
@@ -44,12 +42,14 @@
           href="//w3h5.com"
           target="_blank"
           >Deshun!</a
-        >&nbsp;<a
-          href="https://beian.miit.gov.cn/"
-          rel="nofollow"
-          target="_blank"
-          >鲁ICP备15019922{{ (code && `-${code}`) || "" }}号</a
-        >
+        ><span v-if="code">
+          &nbsp;<a
+            href="https://beian.miit.gov.cn/"
+            rel="nofollow"
+            target="_blank"
+            v-html="`鲁ICP备15019922-${code}号`"
+          ></a>
+        </span>
       </p>
     </div>
   </div>
@@ -60,7 +60,7 @@ const website = [
   {
     name: "德顺网络传媒",
     title: "爱秒赞(德顺网络传媒)",
-    code: '',
+    code: "2",
     typeName: "网站",
     regex: /(http(s)?:\/\/)?([\w-]+.)?52deshun.com/,
   },
@@ -72,11 +72,18 @@ const website = [
     regex: /(http(s)?:\/\/)?([\w-]+.)?ideshun.cn/,
   },
   {
-    name: "德顺互联网资料分享",
-    title: "德顺互联网资料分享",
+    name: "德顺博客",
+    title: "德顺博客",
     code: 6,
     typeName: "网站",
-    regex: /(http(s)?:\/\/)?([\w-]+.)?dblog.cc/,
+    regex: /(http(s)?:\/\/)?([\w-]+.)?idblog.cn/,
+  },
+  {
+    name: "下载站欢迎页",
+    title: "下载站欢迎页",
+    code: undefined,
+    typeName: "网站",
+    regex: /(http(s)?:\/\/)?([\w-]+.)?w3to.dev/,
   },
 ];
 export default {
